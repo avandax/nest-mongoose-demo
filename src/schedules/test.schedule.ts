@@ -15,7 +15,7 @@ export class TestSchedule {
   handle() {
     this.#logger.info(moment().format(), this.handle.name);
 
-    const schedule_name = `test addCronJob-${moment().format()}`;
-    this.sch.addCronJob(schedule_name, 10);
+    // const schedule_name = `test addCronJob-${moment().format()}`;
+    // this.sch.addCronJob(schedule_name, 10);
   }
 }
