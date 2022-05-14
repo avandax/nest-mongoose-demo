@@ -1,10 +1,11 @@
-import { Module } from "@nestjs/common";
+import { Module, ValidationPipe } from "@nestjs/common";
 import { IMongooseModule } from "./modules/imongoose/imongoose.module";
 import { RoutesModule } from "./routes/routes.module";
 import { ConfModule } from "./modules/conf/conf.module";
 import { CacheModule } from "./modules/cache/cache.module";
+import { APP_PIPE } from "@nestjs/core";
 
-// 配置 todo
+// 配置
 // logger todo
 // interceptor todo
 // jwt todo
@@ -25,6 +26,16 @@ import { CacheModule } from "./modules/cache/cache.module";
     IMongooseModule,
     CacheModule,
     RoutesModule
+  ],
+  providers: [
+    {
+      provide: APP_PIPE,
+      useValue: new ValidationPipe({
+        skipMissingProperties: false,
+        dismissDefaultMessages: true,
+        validationError: { target: false }
+      })
+    }
   ]
 })
 export class AppModule {
