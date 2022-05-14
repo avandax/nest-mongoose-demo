@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post } from "@nestjs/common";
+import { CacheKey, CacheTTL, Controller, Get, Param, Post } from "@nestjs/common";
 import { MovieService } from "./movie.service";
 import { Movie } from "../../schemas/movie.schema";
 
@@ -7,6 +7,8 @@ export class MovieController {
   constructor(private readonly service: MovieService) {
   }
 
+  @CacheKey("MOVIES")
+  @CacheTTL(20)
   @Get()
   list() {
     return this.service.getMovies();

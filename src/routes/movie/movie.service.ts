@@ -33,7 +33,7 @@ export class MovieService {
       year: 1990,
       poster: "test",
       director: "test",
-      comments: ["hhhhhh"],
+      comments: ["hhhhhh"]
     });
   }
 }

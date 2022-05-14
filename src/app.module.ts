@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { IMongooseModule } from "./modules/imongoose/imongoose.module";
 import { RoutesModule } from "./routes/routes.module";
 import { ConfModule } from "./modules/conf/conf.module";
+import { CacheModule } from "./modules/cache/cache.module";
 
 // 配置 todo
 // logger todo
@@ -22,6 +23,7 @@ import { ConfModule } from "./modules/conf/conf.module";
   imports: [
     ConfModule,
     IMongooseModule,
+    CacheModule,
     RoutesModule
   ]
 })
