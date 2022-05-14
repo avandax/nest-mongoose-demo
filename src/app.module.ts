@@ -1,5 +1,4 @@
 import { Module } from "@nestjs/common";
-import { HelloWorldModule } from "./routes/helloWorld/helloWorld.module";
 import { IMongooseModule } from "./modules/imongoose";
 import { RoutesModule } from "./routes/routes.module";
 
@@ -14,6 +13,10 @@ import { RoutesModule } from "./routes/routes.module";
 // redis todo
 // nacos todo
 // Moleculer todo
+// bull
+// schedules
+// pm2
+// docker
 @Module({
   imports: [
     IMongooseModule,
