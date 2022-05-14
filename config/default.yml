@@ -1,3 +1,5 @@
+hostname: localhost
+port: 3001
 file: default
 test:
   hhh
