@@ -5,15 +5,14 @@ import { Model } from "mongoose";
 
 @Injectable()
 export class MovieService {
-  constructor(
-    @InjectModel(Movie.name) private movieModel: Model<MovieDocument>) {
+  constructor(@InjectModel(Movie.name) private movieModel: Model<MovieDocument>) {
   }
 
   /**
    * 获取电影列表
    */
   async getMovies(): Promise<Movie[]> {
-    return this.movieModel.find().exec();
+    return this.movieModel.find();
   }
 
   /**
