@@ -17,3 +17,10 @@ log4js:
       appenders:
         - 'console'
       level: 'info'
+#  tcp 微服务
+tcp-micro-service:
+    transport: 0
+    options:
+      host: "localhost"
+      port: 63375
+
