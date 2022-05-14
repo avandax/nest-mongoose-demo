@@ -6,7 +6,7 @@ import { CacheModule } from "./modules/cache/cache.module";
 import { APP_PIPE } from "@nestjs/core";
 
 // 配置
-// logger todo
+// logger
 // interceptor todo
 // jwt todo
 // exception filter todo

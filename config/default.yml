@@ -4,3 +4,16 @@ file: default
 test:
   hhh
 mongodb: mongodb://localhost:27017/Movie
+
+log4js:
+  pm2: true
+  disableClustering: true
+  pm2InstanceVar: 'INSTANCE_ID'
+  appenders:
+    console:
+      type: 'console'
+  categories:
+    default:
+      appenders:
+        - 'console'
+      level: 'info'

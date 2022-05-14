@@ -2,12 +2,21 @@ import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
 import { NestExpressApplication } from "@nestjs/platform-express";
 import { ConfigService } from "@nestjs/config";
+import { LoggerMiddleware } from "./middlewares/logger.middleware";
+import * as log4js from "log4js";
+import { getLogger } from "log4js";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, { cors: true });
   const configService = app.get<ConfigService>(ConfigService);
+
+  // 日志中间件
+  log4js.configure(configService.get("log4js"));
+  const logger = getLogger("bootstrap");
+  app.use(LoggerMiddleware);
+
   await app.listen(configService.get<number>("port"), configService.get<string>("hostname"));
-  console.log(`Application is running on: ${await app.getUrl()}, env:${process.env.NODE_ENV}`);
+  logger.info(`Application is running on: ${await app.getUrl()}, env:${process.env.NODE_ENV}`);
 }
 
 bootstrap().catch(console.error);
