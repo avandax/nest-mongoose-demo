@@ -4,6 +4,7 @@ import { RoutesModule } from "./routes/routes.module";
 import { ConfModule } from "./modules/conf/conf.module";
 import { CacheModule } from "./modules/cache/cache.module";
 import { APP_PIPE } from "@nestjs/core";
+import { ScheduleModule } from "./schedules/schedule.module";
 
 // 配置
 // logger
@@ -25,7 +26,8 @@ import { APP_PIPE } from "@nestjs/core";
     ConfModule,
     IMongooseModule,
     CacheModule,
-    RoutesModule
+    RoutesModule,
+    ScheduleModule
   ],
   providers: [
     {
