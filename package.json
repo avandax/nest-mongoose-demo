@@ -22,13 +22,15 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "sv": "standard-version -r",
     "mgrt:create": "migrate-mongo create",
-    "mgrt": "migrate-mongo up -f configs/migrate-mongo.js"
+    "mgrt": "migrate-mongo up -f config/migrate-mongo.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/mongoose": "^9.0.3",
     "@nestjs/platform-express": "^8.0.0",
+    "config": "^3.3.7",
     "mongoose": "^6.3.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

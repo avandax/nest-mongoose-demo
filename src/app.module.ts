@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
-import { IMongooseModule } from "./modules/imongoose";
+import { IMongooseModule } from "./modules/imongoose/imongoose.module";
 import { RoutesModule } from "./routes/routes.module";
+import { ConfModule } from "./modules/conf/conf.module";
 
 // 配置 todo
 // logger todo
@@ -19,9 +20,10 @@ import { RoutesModule } from "./routes/routes.module";
 // docker
 @Module({
   imports: [
+    ConfModule,
     IMongooseModule,
-    RoutesModule,
-  ],
+    RoutesModule
+  ]
 })
 export class AppModule {
 }
