@@ -20,7 +20,10 @@ stages:
         displayName: Nodejs 构建
         nodeVersion: 16.14.2
         commands:
-          - yarn global add typescript && yarn install && yarn build:prod && cp -r node_modules ./dist/node_module
+          - yarn global add typescript
+          - yarn install
+          - yarn build:prod
+          - cp -r node_modules ./dist/node_module
         artifacts:
           - name: BUILD_ARTIFACT
             path:
