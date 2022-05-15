@@ -24,7 +24,7 @@ stages:
         artifacts:
           - name: BUILD_ARTIFACT
             path:
-              - ./dist
+              - dist
       - step: publish@general_artifacts
         name: publish_general_artifacts
         displayName: 上传制品
