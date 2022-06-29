@@ -2,7 +2,6 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Post } from "@nestjs/commo
 import { BaseService } from "./base.service";
 import { LoginDto } from "./base.dto";
 import { Profile, Public } from "../../shared/decorators";
-import { IException } from "../../shared/exceptions";
 
 @Controller()
 export class BaseController {
