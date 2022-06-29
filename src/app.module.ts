@@ -57,10 +57,6 @@ import { AuthModule } from "./modules/auth/auth.module";
       useClass: RenewalTokenInterceptor
     },
     {
-      provide: APP_INTERCEPTOR,
-      useClass: RenewalTokenInterceptor
-    },
-    {
       provide: APP_FILTER,
       useValue: new GlobalExceptionFilter()
     },
