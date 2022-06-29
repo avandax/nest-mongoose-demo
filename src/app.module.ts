@@ -3,8 +3,9 @@ import { IMongooseModule } from "./modules/imongoose/imongoose.module";
 import { RoutesModule } from "./routes/routes.module";
 import { ConfModule } from "./modules/conf/conf.module";
 import { CacheModule } from "./modules/cache/cache.module";
-import { APP_PIPE } from "@nestjs/core";
+import { APP_GUARD, APP_PIPE } from "@nestjs/core";
 import { ScheduleModule } from "./schedules/schedule.module";
+import { JwtAuthGuard } from "./shared/jwtAuth.guard";
 
 // 配置
 // logger
@@ -37,8 +38,13 @@ import { ScheduleModule } from "./schedules/schedule.module";
         dismissDefaultMessages: true,
         validationError: { target: false }
       })
+    },
+    {
+      provide: APP_GUARD,
+      useClass: JwtAuthGuard
     }
   ]
+
 })
 export class AppModule {
 }
