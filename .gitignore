@@ -33,3 +33,15 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+.yarn/*
+.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+# vscode 开发时 本地执行 yarn dlx @yarnpkg/sdks vscode
+.yarn/sdks
+
+ # 环境变量配置文件
+.env

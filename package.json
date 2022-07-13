@@ -1,6 +1,6 @@
 {
   "name": "nest-mongoose-demo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "author": "",
   "private": true,
@@ -11,9 +11,9 @@
     "build:prod": "rimraf dist && tsc -p tsconfig:prod.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "node -r tsconfig-paths/register dist/src/main.js",
-    "start:dev": "node -r tsconfig-paths/register dist/src/main.js",
+    "start:dev": "node -r dotenv/config -r tsconfig-paths/register dist/src/main.js",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node -r tsconfig-paths/register dist/main",
+    "start:prod": "node -r dotenv/config -r tsconfig-paths/register dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -39,6 +39,9 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "config": "^3.3.7",
+    "cron": "^2.0.0",
+    "dotenv": "^16.0.1",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
     "log4js": "^6.4.6",
     "moment": "^2.29.3",
@@ -127,5 +130,6 @@
     "*.ts": [
       "eslint --fix"
     ]
-  }
+  },
+  "packageManager": "yarn@3.2.1"
 }
